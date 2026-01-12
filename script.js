@@ -27,3 +27,11 @@ function getHumanChoice() {
 }
 //getHumanChoice();
 
+ //score trackers
+const humanScore = 0;
+const computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    //playRound takes getComputerChoice() and getHumanChoice() as arguments, plays a round, increments the winner's score and prints a winner announcement
+    //rock beats scissors, scissors beats paper, and paper beats rock
+}

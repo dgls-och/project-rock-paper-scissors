@@ -80,4 +80,4 @@ START
     END FUNCTION
 END PROGRAM
 
-Note: code may differ slightly in actual program
+Note: code may differ slightly in actual program, and the playRound function is an excessive complication
