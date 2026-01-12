@@ -4,7 +4,7 @@ console.log("Hello, World!");
 */
 
 function getComputerChoice() {
-    //the function, getComputerChoice randomly returns computer choice of either "rock", "paper", or "scissors"
+    //the function randomly returns computer choice of either "rock", "paper", or "scissors"
     const max = 3, min = 1;
     const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
     const computerChoice = (randomNumber === 1)
@@ -13,5 +13,17 @@ function getComputerChoice() {
     //console.log(`computer choice is ${randomNumber}: ${computerChoice}`);
     return computerChoice;
 }
+//getComputerChoice();
 
-getComputerChoice();
+function getHumanChoice() {
+    //the function takes the player's input (a number between 1 and 3) and returns either "rock", "paper", or "scissors"
+    const playerInput = parseInt(prompt(`1 is "rock", 2 is "paper", and 3 is "scissors". Enter your choice`));
+    const playerChoice = playerInput === 1
+        ? "rock" : playerInput === 2
+        ? "paper" : playerInput === 3
+        ? "scissors" : "It is invalid!";
+    //console.log(`Your choice is ${playerInput}: ${playerChoice}`);
+    return playerChoice;
+}
+//getHumanChoice();
+
