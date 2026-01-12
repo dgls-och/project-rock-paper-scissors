@@ -1,0 +1,83 @@
+START
+    SEQUENCE
+        COMMENT this sequence is a test
+        OUTPUT "Hello World!"
+    END SEQUENCE
+
+    FUNCTION getComputerChoice
+        COMMENT the function, getComputerChoice randomly returns computer choice of either "rock", "paper", or "scissors"
+        SET randomNumber to a randomly generated number between 1 and 3
+        INPUT choice
+        IF randomNumber is 1 THEN
+            choice is "Scissors"
+        ELSE IF randomNumber is 2 THEN
+            choice is "rock"
+        ELSE IF randomNumber is 3 THEN
+            choice is "paper"
+        END IF
+        OUTPUT choice
+    END FUNCTION
+
+    FUNCTION getHumanChoice
+        COMMENT the function, getHumanChoice takes the player's input (a number between 1 and 3) and returns either "rock", "paper", or "scissors"
+        SET playerInput to "1 is 'rock', 2 is 'paper', and 3 is 'scissors.' Enter your choice"
+        INPUT choice
+        IF playerInput is 1 THEN
+            choice is "rock"
+        ELSE IF playerInput is 2 THEN
+            choice is "paper"
+        ELSE IF playerInput is 3 THEN
+            choice is "scissors"
+        END IF
+        OUTPUT choice
+    END FUNCTION
+
+    FUNCTION playGame
+        COMMENT the function, playGame calls playRound() to play five (5) rounds, keeps track of the scores and declares the winner at the end
+        
+        COMMENT variables below are score trackers
+        SET humanScore to 0
+        SET computerScore to 0
+
+        FUNCTION playRound (humanChoice, computerChoice)
+            COMMENT the function, playRound takes the getComputerChoice and getHumanChoice functions as arguments, plays a round, increments the winner's score and prints a winner announcement
+            COMMENT rock beats scissors, scissors beats paper, and paper beats rock
+            IF computerChoice is "rock" AND unless humanChoice is "rock" OR "paper" THEN
+                IF humanChoice is "rock" THEN
+                    OUTPUT "computerChoice is even with humanChoice."
+                ELSE IF humanChoice is "paper" THEN
+                    INCREMENT humanScore
+                    OUTPUT "You win! humanChoice beats computerChoice
+                END IF
+                INCREMENT computerScore by 1
+                OUTPUT "You lose! computerChoice beats humanChoice."
+            ELSE IF computerChoice is "paper" AND unless humanChoice is "paper" OR "scissor" THEN
+                IF humanChoice is "paper" THEN
+                    OUTPUT "computerChoice is even with humanChoice."
+                ELSE IF humanChoice is "scissors" THEN
+                    INCREMENT humanScore
+                    OUTPUT "You win! humanChoice beats computerChoice
+                END IF
+                INCREMENT computerScore by 1
+                OUTPUT "You lose! computerChoice beats humanChoice."
+            ELSE IF computerChoice is "scissors" AND unless humanChoice is "scissors" OR "rock" THEN
+                IF humanChoice is "scissors" THEN
+                    OUTPUT "computerChoice is even with humanChoice."
+                ELSE IF humanChoice is "rock" THEN
+                    INCREMENT humanScore
+                    OUTPUT "You win! humanChoice beats computerChoice
+                END IF
+                INCREMENT computerScore by 1
+                OUTPUT "You lose! computerChoice beats humanChoice."
+            END IF
+        END FUNCTION
+
+        OUTPUT playRound(getHumanChoice(), getComputerChoice())
+        OUTPUT playRound(getHumanChoice(), getComputerChoice())
+        OUTPUT playRound(getHumanChoice(), getComputerChoice())
+        OUTPUT playRound(getHumanChoice(), getComputerChoice())
+        OUTPUT playRound(getHumanChoice(), getComputerChoice())
+    END FUNCTION
+END PROGRAM
+
+Note: code may differ slightly in actual program
