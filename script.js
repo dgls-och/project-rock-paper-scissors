@@ -58,7 +58,9 @@ function playGame() {
             || humanChoice === "paper" && computerChoice === "rock") {
                 humanScore++;
                 return `${human} beats ${computer}. You win!`;
-            } else if (humanChoice === "It is invalid!") {
+            } else if (humanChoice === "It is invalid!" && computerChoice === "rock" || "paper" || "scissors") {
+                computerScore += 0;
+                humanScore += 0;
                 return "Your choice is invalid.";
             } else {
                 computerScore++;
@@ -70,11 +72,14 @@ function playGame() {
     playRound(human, computer);
 
     if (humanScore > computerScore) {
-        return `You are the winner!
-        You: ${humanScore}. Computer: ${computerScore}`;
+        return `You win!
+        You: ${humanScore}. Computer: ${computerScore}.`;
+    } else if (humanScore === computerScore) {
+        return `The game was a draw.
+        You: ${humanScore}. Computer ${computerScore}.`
     } else {
         return `You loose.
-        You: ${humanScore}. Computer: ${computerScore}`
+        You: ${humanScore}. Computer: ${computerScore}.`
     }
 }
 
