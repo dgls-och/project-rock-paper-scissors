@@ -73,8 +73,6 @@ function playGame() {
     }
     //console.log(playRound(human, computer));
 
-    playRound(human, computer);
-
     if (humanScore > computerScore) {
         return `You win!
         You: ${humanScore}. Computer: ${computerScore}.`;
