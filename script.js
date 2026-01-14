@@ -41,8 +41,12 @@ function playGame() {
         return `${firstLetterToUpperCase}${playerChoice.slice(1)}`;
     }
     //console.log(capitalizeFirstLetter(getComputerChoice()));
-    const computer = capitalizeFirstLetter(getComputerChoice());
-    const human = capitalizeFirstLetter(getHumanChoice());
+     for (let round = 0; round < 5; round++) {
+        const computer = getComputerChoice();
+        const human = getHumanChoice();
+
+        playRound(human, computer);
+    }
 
     function playRound(humanChoice, computerChoice) {
         //playRound takes getComputerChoice() and getHumanChoice() as arguments, plays a round, increments the winner's score and prints a winner announcement
@@ -57,14 +61,14 @@ function playGame() {
             || humanChoice === "scissors" && computerChoice === "paper"
             || humanChoice === "paper" && computerChoice === "rock") {
                 humanScore++;
-                return `${human} beats ${computer}. You win!`;
+                return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice)}. You win!`;
             } else if (humanChoice === "It is invalid!" && computerChoice === "rock" || "paper" || "scissors") {
                 computerScore += 0;
                 humanScore += 0;
                 return "Your choice is invalid.";
             } else {
                 computerScore++;
-                return `${computer} beats ${human}! You loose.`;
+                return `${capitalizeFirstLetter(getComputerChoice())} beats ${capitalizeFirstLetter(getHumanChoice())}! You loose.`;
             }
     }
     //console.log(playRound(human, computer));
