@@ -36,11 +36,10 @@ function playGame() {
 
     //capitalize each player's choice in announcement
     function capitalizeFirstLetter(playerChoice) {
-        const firstLetter = playerChoice.slice(0, 1);
-        const firstLetterToUpperCase = firstLetter.toUpperCase();
-        return `${firstLetterToUpperCase}${playerChoice.slice(1)}`;
+        return `${playerChoice.charAt(0).toUpperCase()}${playerChoice.slice(1)}`;
     }
     //console.log(capitalizeFirstLetter(getComputerChoice()));
+
      for (let round = 0; round < 5; round++) {
         const computer = getComputerChoice();
         const human = getHumanChoice();
@@ -61,7 +60,7 @@ function playGame() {
             || humanChoice === "scissors" && computerChoice === "paper"
             || humanChoice === "paper" && computerChoice === "rock") {
                 humanScore++;
-                return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice)}. You win!`;
+                return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice())}. You win!`;
             } else if (humanChoice === "It is invalid!" && computerChoice === "rock" || "paper" || "scissors") {
                 computerScore += 0;
                 humanScore += 0;
