@@ -40,11 +40,12 @@ function playGame() {
     }
     //console.log(capitalizeFirstLetter(getComputerChoice()));
 
-     for (let round = 0; round < 5; round++) {
+    for (let round = 1; round <= 5; round++) {
         const computer = getComputerChoice();
         const human = getHumanChoice();
 
         playRound(human, computer);
+        console.log(round);
     }
 
     function playRound(humanChoice, computerChoice) {
@@ -62,8 +63,8 @@ function playGame() {
                 humanScore++;
                 return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice())}. You win!`;
             } else if (humanChoice === "It is invalid!" && computerChoice === "rock" || "paper" || "scissors") {
-                computerScore += 0;
-                humanScore += 0;
+                computerScore;
+                humanScore;
                 return "Your choice is invalid.";
             } else {
                 computerScore++;
