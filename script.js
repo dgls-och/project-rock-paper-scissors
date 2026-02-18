@@ -8,10 +8,10 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     const playerInput = parseInt(
-        prompt(`1 is "rock", 2 is "paper", and 3 is "scissors". Enter your choice`)
+        prompt(`1 is "rock", 2 is "paper", and 3 is "scissors". Enter your choice.`)
     );
     const playerChoice = (playerInput === 1) ? "rock" : (playerInput === 2) ?
-        "paper" : (playerInput === 3) ? "scissors" : "It is invalid!";
+        "paper" : (playerInput === 3) ? "scissors" : "Choice is invalid!";
     return playerChoice;
 }
 
@@ -65,7 +65,7 @@ function playGame() {
         You: ${humanScore}. Computer: ${computerScore}.`;
     } else if (humanScore === computerScore) {
         return `The game was a draw.
-        You: ${humanScore}. Computer ${computerScore}.`
+        You: ${humanScore}. Computer: ${computerScore}.`
     } else {
         return `You loose.
         You: ${humanScore}. Computer: ${computerScore}.`
