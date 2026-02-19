@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    background-color: #fafad2;
+    color: #708090;
+}
+
+.footer {
+    background-color: #708090;
+    color: #fafad2;
+    position: relative;
+    bottom: 0;
+}

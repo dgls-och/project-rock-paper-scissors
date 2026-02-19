@@ -31,7 +31,7 @@ function playGame() {
         const human = getHumanChoice();
 
         playRound(human, computer);
-        console.log(round);
+        console.log("Round is " + round);
     }
 
     function playRound(humanChoice, computerChoice) {
