@@ -11,7 +11,7 @@ function getHumanChoice() {
         prompt(`1 is "rock", 2 is "paper", and 3 is "scissors". Enter your choice.`)
     );
     const playerChoice = (playerInput === 1) ? "rock" : (playerInput === 2) ?
-        "paper" : (playerInput === 3) ? "scissors" : "Choice is invalid!";
+        "paper" : (playerInput === 3) ? "scissors" : "invalid!";
     return playerChoice;
 }
 
@@ -50,19 +50,18 @@ function playGame() {
             humanScore++;
             return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice())}. You win!`;
         }
-        
-        if (humanChoice === "It is invalid!" && computerChoice ===
-            "rock" || "paper" || "scissors") {
-            computerScore;
-            humanScore;
-            return "Your choice is invalid.";
-        }
-        
+                
         if (computerChoice === "rock" && humanChoice === "scissors" ||
             computerChoice === "scissors" && humanChoice === "paper" ||
             computerChoice === "paper" && humanChoice === "rock") {
             computerScore++;
             return `${capitalizeFirstLetter(getComputerChoice())} beats ${capitalizeFirstLetter(getHumanChoice())}! You loose.`;
+        }
+        
+        if (humanChoice === "invalid!" && computerChoice ===
+            "rock" || "paper" || "scissors") {
+            computerScore++;
+            return "Your choice is invalid.";
         }
     }
 
