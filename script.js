@@ -50,14 +50,14 @@ function playGame() {
             humanChoice === "scissors" && computerChoice === "paper" ||
             humanChoice === "paper" && computerChoice === "rock") {
             humanScore++;
-            return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice())}. You win!`;
+            return `${capitalizeFirstLetter(humanChoice)} beats ${capitalizeFirstLetter(computerChoice)}. You win!`;
         }
 
         if (computerChoice === "rock" && humanChoice === "scissors" ||
             computerChoice === "scissors" && humanChoice === "paper" ||
             computerChoice === "paper" && humanChoice === "rock") {
             computerScore++;
-            return `${capitalizeFirstLetter(getComputerChoice())} beats ${capitalizeFirstLetter(getHumanChoice())}! You loose.`;
+            return `${capitalizeFirstLetter(computerChoice)} beats ${capitalizeFirstLetter(humanChoice)}! You loose.`;
         }
 
         if (humanChoice === "invalid!" && computerChoice ===
