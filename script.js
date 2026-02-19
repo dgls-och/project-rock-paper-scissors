@@ -31,7 +31,7 @@ function playGame() {
         const human = getHumanChoice();
 
         playRound(human, computer);
-        console.log("Round is " + round);
+        console.log("Round " + round + ": " + "Computer choice is " + computer + " and human choice is " + human);
     }
 
     function playRound(humanChoice, computerChoice) {
@@ -42,31 +42,39 @@ function playGame() {
 
         if (humanChoice === computerChoice) {
             return `It is a draw.`;
-        } else if (humanChoice === "rock" && computerChoice === "scissors" ||
+        }
+        
+        if (humanChoice === "rock" && computerChoice === "scissors" ||
             humanChoice === "scissors" && computerChoice === "paper" ||
             humanChoice === "paper" && computerChoice === "rock") {
-                humanScore++;
-                return `${capitalizeFirstLetter(getHumanChoice())} beats ${
-                    capitalizeFirstLetter(getComputerChoice())}. You win!`;
-        } else if (humanChoice === "It is invalid!" && computerChoice ===
+            humanScore++;
+            return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice())}. You win!`;
+        }
+        
+        if (humanChoice === "It is invalid!" && computerChoice ===
             "rock" || "paper" || "scissors") {
-                computerScore;
-                humanScore;
-                return "Your choice is invalid.";
-        } else {
+            computerScore;
+            humanScore;
+            return "Your choice is invalid.";
+        }
+        
+        if (computerChoice === "rock" && humanChoice === "scissors" ||
+            computerChoice === "scissors" && humanChoice === "paper" ||
+            computerChoice === "paper" && humanChoice === "rock") {
             computerScore++;
-            return `${capitalizeFirstLetter(getComputerChoice())} beats ${
-                capitalizeFirstLetter(getHumanChoice())}! You loose.`;
+            return `${capitalizeFirstLetter(getComputerChoice())} beats ${capitalizeFirstLetter(getHumanChoice())}! You loose.`;
         }
     }
 
     if (humanScore > computerScore) {
         return `You win!
         You: ${humanScore}. Computer: ${computerScore}.`;
-    } else if (humanScore === computerScore) {
+    }
+    if (humanScore === computerScore) {
         return `The game was a draw.
         You: ${humanScore}. Computer: ${computerScore}.`
-    } else {
+    }
+    if (computerScore > humanScore) {
         return `You loose.
         You: ${humanScore}. Computer: ${computerScore}.`
     }
