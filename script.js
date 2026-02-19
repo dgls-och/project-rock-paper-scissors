@@ -1,3 +1,5 @@
+const buttons = document.querySelectorAll("buttons");
+
 function getComputerChoice() {
     const max = 3, min = 1;
     const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
@@ -43,21 +45,21 @@ function playGame() {
         if (humanChoice === computerChoice) {
             return `It is a draw.`;
         }
-        
+
         if (humanChoice === "rock" && computerChoice === "scissors" ||
             humanChoice === "scissors" && computerChoice === "paper" ||
             humanChoice === "paper" && computerChoice === "rock") {
             humanScore++;
             return `${capitalizeFirstLetter(getHumanChoice())} beats ${capitalizeFirstLetter(getComputerChoice())}. You win!`;
         }
-                
+
         if (computerChoice === "rock" && humanChoice === "scissors" ||
             computerChoice === "scissors" && humanChoice === "paper" ||
             computerChoice === "paper" && humanChoice === "rock") {
             computerScore++;
             return `${capitalizeFirstLetter(getComputerChoice())} beats ${capitalizeFirstLetter(getHumanChoice())}! You loose.`;
         }
-        
+
         if (humanChoice === "invalid!" && computerChoice ===
             "rock" || "paper" || "scissors") {
             computerScore++;
@@ -65,16 +67,17 @@ function playGame() {
         }
     }
 
-    if (humanScore > computerScore) {
-        return `You win!
+    switch (true) {
+        case humanScore > computerScore:
+            return `You win!
         You: ${humanScore}. Computer: ${computerScore}.`;
-    }
-    if (humanScore === computerScore) {
-        return `The game was a draw.
+            break;
+        case humanScore === computerScore:
+            return `The game was a draw.
         You: ${humanScore}. Computer: ${computerScore}.`
-    }
-    if (computerScore > humanScore) {
-        return `You loose.
+            break;
+        case computerScore > humanScore:
+            return `You loose.
         You: ${humanScore}. Computer: ${computerScore}.`
     }
 }
