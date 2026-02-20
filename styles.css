@@ -46,8 +46,8 @@
 }
 
 .footer {
-    background-color: #708090;
-    color: #ffff00;
+    background-color: transparent;
+    color: #008000;
     position: fixed;
     bottom: 0;
     right: 0;
