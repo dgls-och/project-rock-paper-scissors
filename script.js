@@ -1,5 +1,7 @@
 const buttons = document.querySelectorAll("button");
 const display = document.querySelector("#display");
+const scores = document.querySelectorAll("p");
+let [humanScoreOutput, computerScoreOutput] = scores;
 
 function getComputerChoice() {
     const max = 3, min = 1;
@@ -60,16 +62,19 @@ buttons.forEach((button) => button.addEventListener('click', (e) => {
 
         switch (true) {
             case humanScore > computerScore:
-                displayText.push(`You win!
-        You: ${humanScore}. Computer: ${computerScore}.`);
+                displayText.push(` You win!`);
+                humanScoreOutput.innerText = `You: ${humanScore}.`;
+                computerScoreOutput.innerText = `Computer: ${computerScore}.`;
                 break;
             case humanScore === computerScore:
-                displayText.push(`The game was a draw.
-        You: ${humanScore}. Computer: ${computerScore}.`);
+                displayText.push(` A draw.`);
+                humanScoreOutput.innerText = `You: ${humanScore}.`;
+                computerScoreOutput.innerText = `Computer: ${computerScore}.`;
                 break;
             case computerScore > humanScore:
-                displayText.push(`You loose.
-        You: ${humanScore}. Computer: ${computerScore}.`);
+                displayText.push(` You loose.`);
+                humanScoreOutput.innerText = `You: ${humanScore}.`;
+                computerScoreOutput.innerText = `Computer: ${computerScore}.`;
         }
         display.textContent = displayText.join("");
     }
