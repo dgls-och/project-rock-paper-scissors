@@ -12,6 +12,14 @@
 .footer {
     background-color: #708090;
     color: #ffff00;
-    position: relative;
+    position: fixed;
     bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 15px 10px;
+    font-size: larger;
+}
+.footer > p > span {
+    color: #ff0000;
+    text-shadow: 0 0 3px #ffffff;
 }
