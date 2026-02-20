@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll("button");
+const display = document.querySelector("#display");
 
 function getComputerChoice() {
     const max = 3, min = 1;
@@ -52,23 +53,26 @@ buttons.forEach((button) => button.addEventListener('click', (e) => {
                 return "Your choice is invalid.";
             }
         }
-
         playRound(human, computer);
-        console.log("Computer choice is " + computer + " and human choice is " + human);
+
+        displayText = [];
+        displayText.push(`Computer choice is ${computer} and human choice is ${human}.`);
 
         switch (true) {
             case humanScore > computerScore:
-                return `You win!
-        You: ${humanScore}. Computer: ${computerScore}.`;
+                displayText.push(`You win!
+        You: ${humanScore}. Computer: ${computerScore}.`);
                 break;
             case humanScore === computerScore:
-                return `The game was a draw.
-        You: ${humanScore}. Computer: ${computerScore}.`
+                displayText.push(`The game was a draw.
+        You: ${humanScore}. Computer: ${computerScore}.`);
                 break;
             case computerScore > humanScore:
-                return `You loose.
-        You: ${humanScore}. Computer: ${computerScore}.`
+                displayText.push(`You loose.
+        You: ${humanScore}. Computer: ${computerScore}.`);
         }
+        display.textContent = displayText.join("");
     }
+
     console.log(playGame());
 }));
