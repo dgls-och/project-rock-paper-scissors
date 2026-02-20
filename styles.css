@@ -37,7 +37,7 @@
     border-radius: 8px;
     padding: 8px;
     font-size: large;
-    width: 30%;
+    width: 40%;
     display: inline;
 }
 
@@ -55,6 +55,7 @@
     padding: 15px 10px;
     font-size: larger;
 }
+
 .footer > p > span {
     color: #ff0000;
     text-shadow: 0 0 3px #ffffff;
