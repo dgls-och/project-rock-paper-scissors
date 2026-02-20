@@ -16,6 +16,35 @@
     font-size: large;
 }
 
+.main {
+    border: 2px solid;
+    border-radius: 10px;
+    width: 70%;
+    height: 50%;
+    margin: 2rem auto;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.main > button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fafad2;
+    background-color: #008000;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: large;
+    width: 30%;
+    display: inline;
+}
+
+.main > p {
+    text-align: right;
+}
+
 .footer {
     background-color: #708090;
     color: #ffff00;
