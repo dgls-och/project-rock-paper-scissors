@@ -8,18 +8,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-/*function getHumanChoice() {
-    const playerInput = parseInt(
-        prompt(`1 is "rock", 2 is "paper", and 3 is "scissors". Enter your choice.`)
-    );
-    const playerChoice = (playerInput === 1) ? "rock" : (playerInput === 2) ?
-        "paper" : (playerInput === 3) ? "scissors" : "invalid!";
-    return playerChoice;
-}*/
-
-
-
-//for (let round = 1; round <= 5; round++) {
 buttons.forEach((button) => button.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -34,17 +22,9 @@ buttons.forEach((button) => button.addEventListener('click', (e) => {
             return `${playerChoice.charAt(0).toUpperCase()}${playerChoice.slice(1)}`;
         }
         const computer = getComputerChoice();
-        const human = `${button.id}`;//getHumanChoice();
-
-        //console.log(human);
-        
-
-
-        //}
+        const human = `${button.id}`;
 
         function playRound(humanChoice, computerChoice) {
-            //rock beats scissors, scissors beats paper, and paper beats rock
-
             humanChoice = humanChoice.toLowerCase();
             computerChoice = computerChoice.toLowerCase();
 
@@ -90,8 +70,5 @@ buttons.forEach((button) => button.addEventListener('click', (e) => {
         You: ${humanScore}. Computer: ${computerScore}.`
         }
     }
-    //playGame();
     console.log(playGame());
 }));
-
-
