@@ -61,17 +61,17 @@ buttons.forEach((button) => button.addEventListener('click', (e) => {
 
         switch (true) {
             case humanScore > computerScore:
-                displayText.push(` You are winning!`);
+                displayText.push(` You are winning! \u{1F600}`);
                 humanScoreOutput.innerText = `You: ${humanScore}.`;
                 computerScoreOutput.innerText = `Computer: ${computerScore}.`;
                 break;
             case humanScore === computerScore:
-                displayText.push(` Score is even.`);
+                displayText.push(` Score is even. \u{1F642}`);
                 humanScoreOutput.innerText = `You: ${humanScore}.`;
                 computerScoreOutput.innerText = `Computer: ${computerScore}.`;
                 break;
             case computerScore > humanScore:
-                displayText.push(` You are loosing.`);
+                displayText.push(` You are loosing. \u{1F643}`);
                 humanScoreOutput.innerText = `You: ${humanScore}.`;
                 computerScoreOutput.innerText = `Computer: ${computerScore}.`;
         }
