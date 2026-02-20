@@ -4,9 +4,16 @@
     box-sizing: border-box;
 }
 
-.main {
+#container {
     background-color: #fafad2;
     color: #708090;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    font-size: large;
 }
 
 .footer {
