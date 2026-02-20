@@ -3,6 +3,9 @@ const display = document.querySelector("#display");
 const scores = document.querySelectorAll("p");
 let [humanScoreOutput, computerScoreOutput] = scores;
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     const max = 3, min = 1;
     const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
@@ -14,12 +17,8 @@ function getComputerChoice() {
 buttons.forEach((button) => button.addEventListener('click', (e) => {
     e.preventDefault();
 
+    //track score and declare winner
     function playGame() {
-        //tracks score and declares winner
-
-        let humanScore = 0;
-        let computerScore = 0;
-
         //capitalize each player's choice in announcement
         function capitalizeFirstLetter(playerChoice) {
             return `${playerChoice.charAt(0).toUpperCase()}${playerChoice.slice(1)}`;
@@ -62,17 +61,17 @@ buttons.forEach((button) => button.addEventListener('click', (e) => {
 
         switch (true) {
             case humanScore > computerScore:
-                displayText.push(` You win!`);
+                displayText.push(` You are winning!`);
                 humanScoreOutput.innerText = `You: ${humanScore}.`;
                 computerScoreOutput.innerText = `Computer: ${computerScore}.`;
                 break;
             case humanScore === computerScore:
-                displayText.push(` A draw.`);
+                displayText.push(` Score is even.`);
                 humanScoreOutput.innerText = `You: ${humanScore}.`;
                 computerScoreOutput.innerText = `Computer: ${computerScore}.`;
                 break;
             case computerScore > humanScore:
-                displayText.push(` You loose.`);
+                displayText.push(` You are loosing.`);
                 humanScoreOutput.innerText = `You: ${humanScore}.`;
                 computerScoreOutput.innerText = `Computer: ${computerScore}.`;
         }
